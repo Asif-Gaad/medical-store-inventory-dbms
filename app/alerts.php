@@ -1,5 +1,6 @@
 <?php
 require 'config.php'; guard();
+page_header('Alerts');
 $cols = 'medicine_name, batch_no, quantity_remaining, expiry_date, days_left';
 echo '<h2>Low stock</h2>';
 table(q("SELECT medicine_name, available_stock, reorder_level, stock_status FROM v_medicine_stock WHERE stock_status <> 'OK' ORDER BY medicine_name"), 'No low-stock medicines.');
